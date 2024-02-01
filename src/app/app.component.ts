@@ -59,15 +59,29 @@ export class AppComponent {
       this.totalAssignValue(Total, val)
     }
     if (this.funcT == '*') {
-      const Total = this.firstNumber * this.secondNumber;
-      this.totalAssignValue(Total, val)
+      let Total = 0;
+      if (this.secondNumber !== 0) {
+        Total = this.firstNumber * this.secondNumber;
+        this.totalAssignValue(Total, val)
+      } else {
+        Total = this.firstNumber * 1;
+        this.totalAssignValue(Total, val)
+      }
     }
     if (this.funcT == '/') {
-      const Total = this.firstNumber / this.secondNumber;
-      this.totalAssignValue(Total, val)
+      let Total = this.firstNumber;
+      if (this.secondNumber !== 0) {
+        Total = this.firstNumber / this.secondNumber;
+        this.totalAssignValue(Total, val)
+      } else {
+        this.totalAssignValue(Total, val)
+      }
     }
     if (this.funcT == '%') {
-      const Total = this.firstNumber % this.secondNumber;
+      let Total = this.firstNumber;
+      if (this.secondNumber != 0) {
+        Total = this.firstNumber % this.secondNumber;
+      }
       this.totalAssignValue(Total, val)
     }
   }
